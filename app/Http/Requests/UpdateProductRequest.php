@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class StoreProductRequest extends FormRequest
+class UpdateProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,14 +25,20 @@ class StoreProductRequest extends FormRequest
     public function rules()
     {
         return [
-			'title' => 'required|unique:products',
+			'title' => [
+				'required',
+				 //Rule::unique('products')->ignore($id),
+			],
 			'price' => 'required|numeric|min:0',
 			'category_id' => 'required|exists:categories,id',
-			'article' => 'required|unique:products',
+			'article' => [
+				'required',
+				//Rule::unique('products')->ignore($id)
+			],
 			'brand' => 'required',
 			'is_new' => 'boolean',
 			'is_recommended' => 'boolean',
 			'status' => 'boolean',
-		];
+        ];
     }
 }

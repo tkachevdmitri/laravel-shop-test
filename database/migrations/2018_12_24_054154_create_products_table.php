@@ -15,16 +15,16 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');  // не пустой, уникальный
+            $table->string('title')->unique();  // не пустой, уникальный
             $table->decimal('price', 8, 2);  // не пустая, не нулевая, не меньше нуля, число
 			$table->integer('category_id');  // должна существовать
-			$table->string('article');  // не пустой, уникальный
-			$table->string('brand')->default('No brand');
+			$table->string('article')->unique();  // не пустой, уникальный
+			$table->string('brand')->default('No brand');  // не пустой
 			$table->string('image')->nullable();
 			$table->text('description')->nullable();
-			$table->integer('is_new')->default(0);  // пустое, 0 или 1
-			$table->integer('is_recommended')->default(0);  // пустое, 0 или 1
-			$table->integer('status')->default(1);  // пустое, 0 или 1
+			$table->boolean('is_new')->default(0);  // пустое, 0 или 1
+			$table->boolean('is_recommended')->default(0);  // пустое, 0 или 1
+			$table->boolean('status')->default(1);  // пустое, 0 или 1
             $table->timestamps();
         });
     }

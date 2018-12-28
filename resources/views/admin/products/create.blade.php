@@ -39,10 +39,18 @@
                             <input type="text" name="price" placeholder="" value="{{old('price')}}">
 
                             <p>Категория</p>
-                            <select name="category_id">
-                                <option value="1">Категория 1</option>
-                                <option value="2">Категория 2</option>
-                            </select>
+                            <!--
+                                category_id - название инпута
+                                2й параметр - массив из значений, где 'L' - value, 'Large' - подпись
+                                null - выбранное значение по умолчаниюкакие эл-ты уже выбраны
+                                4й параметр - массив с атрибутами html данных
+                            -->
+                            {{Form::select('category_id',
+                                $categories,
+                                null
+                                )
+                            }}
+                            <br><br>
 
                             <p>Артикул</p>
                             <input type="text" name="article" placeholder="" value="{{old('article')}}">
@@ -54,25 +62,25 @@
                             <input type="file" name="image" placeholder="" value="">
 
                             <p>Опписание</p>
-                            <textarea name="description"></textarea>
+                            <textarea name="description">{{old('description')}}</textarea>
 
                             <div class="input_wrap">
                                 <label>
-                                    <input type="checkbox" name="is_new">
+                                    <input type="checkbox" name="is_new" value="1">
                                     Новинка
                                 </label>
                             </div>
 
                             <div class="input_wrap">
                                 <label>
-                                    <input type="checkbox" name="is_recommended">
+                                    <input type="checkbox" name="is_recommended" value="1">
                                     Рекоммендуемый
                                 </label>
                             </div>
 
                             <div class="input_wrap">
                                 <label>
-                                    <input type="checkbox" checked name="status">
+                                    <input type="checkbox" checked name="status" value="1">
                                     Статус товара
                                 </label>
                             </div>

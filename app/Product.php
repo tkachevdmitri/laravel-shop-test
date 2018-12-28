@@ -6,17 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-	protected $fillable = ['title', 'price', 'article', 'brand', 'description', 'category_id'];
-	
-	// статусы товара
-	const IS_DRAFT = 0;
-	const IS_PUBLIC = 1;
-	// новый товар или нет
-	const IS_NEW = 1;
-	const IS_DEFAULT_NEW = 0;
-	// рекоммендуемый товар или нет
-	const IS_RECOMMENDED = 1;
-	const IS_DEFAULT_RECOMMENDED = 0;
+	protected $fillable = ['title', 'price', 'category_id', 'article', 'brand', 'description', 'is_new', 'is_recommended', 'status'];
 	
 	
 	// Связи таблиц
@@ -27,9 +17,8 @@ class Product extends Model
 	}
 	
 	
-	
 	// Методы для работы с товаром
-	// Добавление товара
+	// Добавление товара - не используется
 	public static function add($fields)
 	{
 		$product = new static;   // новый экземпляр модели
@@ -41,67 +30,19 @@ class Product extends Model
 		return $product;
 	}
 	
-	// Редактирование, обновление товара
+	
+	// Редактирование, обновление товара - не используется
 	public function edit($fields)
 	{
 		$this->fill($fields);
 		$this->save();
 	}
 	
-	// Установки статуса товара (отображается или нет)
-	public function setDraft()
+	
+	// Вывод id категории, для выпадающего селекта
+	public function getCategoryID()
 	{
-		$this->status = Product::IS_DRAFT;
-		$this->save();
-	}
-	public function setPublic()
-	{
-		$this->status = Product::IS_PUBLIC;
-		$this->save();
-	}
-	public function toggleStatus($value)
-	{
-		if($value == null) {
-			return $this->setDraft();
-		}
-		return $this->setPublic();
+		return $this->category != null ? $this->category->id : null;
 	}
 	
-	
-	// Установка "Новинка"
-	public function setNew()
-	{
-		$this->is_new = Product::IS_NEW;
-		$this->save();
-	}
-	public function setDefaultNew()
-	{
-		$this->is_new = Product::IS_DEFAULT_NEW;
-	}
-	public function toggleNew($value)
-	{
-		if($value == null){
-			return $this->setDefaultNew();
-		}
-		return $this->setNew();
-	}
-	
-	// Установка "Рекоммендуемый"
-	public function setRecommended()
-	{
-		$this->is_recommended = Product::IS_RECOMMENDED;
-		$this->save();
-	}
-	public function setDefaultRecommended()
-	{
-		$this->is_recommended = Product::IS_DEFAULT_RECOMMENDED;
-		$this->save();
-	}
-	public function toggleRecommended($value)
-	{
-		if($value == null){
-			return $this->setDefaultRecommended();
-		}
-		return $this->setRecommended();
-	}
 }

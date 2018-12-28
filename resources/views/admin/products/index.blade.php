@@ -40,7 +40,7 @@
                         <td>{{$product->article}}</td>
                         <td>{{$product->title}}</td>
                         <td>{{$product->price}}</td>
-                        <td>-</td>
+                        <td>{{$product->category_id}}</td>
                         <td>{{$product->brand}}</td>
                         <td>
                             <a href="{{route('products.edit', $product->id)}}" title="Редактировать">

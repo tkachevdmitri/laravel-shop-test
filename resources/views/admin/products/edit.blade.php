@@ -44,10 +44,18 @@
                             <input type="text" name="price" placeholder="" value="{{$product->price}}">
 
                             <p>Категория</p>
-                            <select name="category_id">
-                                <option value="">Категория 1</option>
-                                <option value="">Категория 2</option>
-                            </select>
+                            <!--
+                                category_id - название инпута
+                                2й параметр - массив из значений, где 'L' - value, 'Large' - подпись
+                                null - выбранное значение по умолчаниюкакие эл-ты уже выбраны
+                                4й параметр - массив с атрибутами html данных
+                            -->
+                            {{Form::select('category_id',
+                                $categories,
+                                $product->getCategoryID()
+                                )
+                            }}
+                            <br><br>
 
                             <p>Артикул</p>
                             <input type="text" name="article" placeholder="" value="{{$product->article}}">
@@ -63,21 +71,21 @@
 
                             <div class="input_wrap">
                                 <label>
-                                    <input type="checkbox" name="is_new">
+                                    {{Form::checkbox('is_new', '1', $product->is_new)}}
                                     Новинка
                                 </label>
                             </div>
 
                             <div class="input_wrap">
                                 <label>
-                                    <input type="checkbox" name="is_recommended">
+                                    {{Form::checkbox('is_recommended', '1', $product->is_recommended)}}
                                     Рекоммендуемый
                                 </label>
                             </div>
 
                             <div class="input_wrap">
                                 <label>
-                                    <input type="checkbox" checked name="status">
+                                    {{Form::checkbox('status', '1', $product->status)}}
                                     Статус товара
                                 </label>
                             </div>

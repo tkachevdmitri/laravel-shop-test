@@ -16,7 +16,11 @@ use Faker\Generator as Faker;
 $factory->define(App\Product::class, function (Faker $faker) {
     return [
         'title' => $faker->name,
-        'price' => $faker->randomDigit
+        'price' => $faker->randomDigit,
+		'article' => '7963456',
+		'brand' => 'Adidas',
+		'description' => 'Описание товара',
+		'category_id' => 1
     ];
 });
 

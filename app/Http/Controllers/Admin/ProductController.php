@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 
 class ProductController extends Controller
 {
@@ -20,6 +22,8 @@ class ProductController extends Controller
 		return view('admin.products.index', ['products' => $products]);
     }
 
+    
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -27,9 +31,12 @@ class ProductController extends Controller
      */
     public function create()
     {
-    	return view('admin.products.create');
+		$categories = Category::pluck('title', 'id')->all();
+    	return view('admin.products.create', ['categories' => $categories]);
     }
 
+    
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -39,15 +46,19 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
 		
-		$product = Product::add($request->all());
-		$product->toggleStatus($request->get('status'));
-		$product->toggleNew($request->get('is_new'));
-		$product->toggleRecommended($request->get('is_recommended'));
+		//$product = Product::add($request->all());
+		$product = new Product;
+		$product->fill($request->all());
+		if(!$request->get('status')){
+			$product->status = 0;
+		}
+		$product->save();
 		
 		return redirect()->route('products.index');
     }
     
 
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -57,9 +68,12 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-        return view('admin.products.edit', ['product' => $product]);
+		$categories = Category::pluck('title', 'id')->all();
+        return view('admin.products.edit', ['product' => $product, 'categories' => $categories]);
     }
 
+    
+    
     /**
      * Update the specified resource in storage.
      *
@@ -67,22 +81,28 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateProductRequest $request, $id)
     {
-        $this->validate($request, [
-        	'title' => 'required',
-			'price' => 'required',
-			'description' => 'required',
-			'brand' => 'required',
-			'image' => 'nullable|image'
-		]);
 	
 		$product = Product::find($id);
-		$product->edit($request->all()); // вызываем метод из модели
+		$product->fill($request->all());
+		if(!$request->get('is_new')){
+			$product->is_new = 0;
+		}
+		if(!$request->get('is_recommended')){
+			$product->is_recommended = 0;
+		}
+		if(!$request->get('status')){
+			$product->status = 0;
+		}
+		$product->save();
+		
 		
 		return redirect()->route('products.index');
     }
 
+    
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -94,4 +114,6 @@ class ProductController extends Controller
         Product::find($id)->delete();
 		return redirect()->route('products.index');
     }
+    
+    
 }
