@@ -1554,6 +1554,11 @@ h2.title {
   padding-left: 0;
 }
 
+.login-form label input[type="checkbox"]{
+  width: 20px;
+  height: 20px;
+}
+
 
 .or{
 	background: #FE980F;

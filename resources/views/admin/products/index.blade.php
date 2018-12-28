@@ -30,18 +30,33 @@
                         <th>Название товара</th>
                         <th>Цена</th>
                         <th>Категория</th>
+                        <th>Бренд</th>
                         <th></th>
                         <th></th>
                     </tr>
                     @foreach($products as $product)
                     <tr>
                         <td>{{$product->id}}</td>
-                        <td>-</td>
+                        <td>{{$product->article}}</td>
                         <td>{{$product->title}}</td>
                         <td>{{$product->price}}</td>
                         <td>-</td>
-                        <td><a href="#" title="Редактировать"><i class="fa fa-pencil-square-o"></i></a></td>
-                        <td><a href="#" title="Удалить"><i class="fa fa-times"></i></a></td>
+                        <td>{{$product->brand}}</td>
+                        <td>
+                            <a href="{{route('products.edit', $product->id)}}" title="Редактировать">
+                                <i class="fa fa-pencil-square-o"></i>
+                            </a>
+                        </td>
+                        <td>
+                            {!! Form::open ([
+                                'route' => ['products.destroy', $product->id],
+                                'method' => 'delete'
+                            ])!!}
+                                <button type="submit" onclick="return confirm('Вы действительно хотите удалить товар {{$product->title}}?')" class="delete">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            {!! Form::close() !!}
+                        </td>
                     </tr>
                     @endforeach
                 </table>

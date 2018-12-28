@@ -16,8 +16,8 @@
             <br/>
 
             <ul>
-                <li><a href="#">Управление товарами</a></li>
-                <li><a href="#">Управление категориями</a></li>
+                <li><a href="{{route('products.index')}}">Управление товарами</a></li>
+                <li><a href="{{route('categories.index')}}">Управление категориями</a></li>
                 <li><a href="#">Управление заказами</a></li>
             </ul>
 

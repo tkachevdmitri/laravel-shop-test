@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreProductRequest;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-		$products = Product::all();
-		return view('admin.products.index', ['products' => $products]);
+    	$categories = Category::all();
+     	return view('admin.categories.index', ['categories' => $categories]);
     }
 
     /**
@@ -27,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-    	return view('admin.products.create');
+    	return view('admin.categories.create');
     }
 
     /**
@@ -36,17 +35,16 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProductRequest $request)
+    public function store(Request $request)
     {
+    	$this->validate($request, [
+    		'title' => 'required'
+		]);
+  
+		Category::create($request->all());
 		
-		$product = Product::add($request->all());
-		$product->toggleStatus($request->get('status'));
-		$product->toggleNew($request->get('is_new'));
-		$product->toggleRecommended($request->get('is_recommended'));
-		
-		return redirect()->route('products.index');
+		return redirect()->route('categories.index');
     }
-    
 
     /**
      * Show the form for editing the specified resource.
@@ -56,8 +54,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::find($id);
-        return view('admin.products.edit', ['product' => $product]);
+        $category = Category::find($id);
+        return view('admin.categories.edit', ['category' => $category]);
     }
 
     /**
@@ -69,18 +67,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-        	'title' => 'required',
-			'price' => 'required',
-			'description' => 'required',
-			'brand' => 'required',
-			'image' => 'nullable|image'
+		$this->validate($request, [
+			'title' => 'required'
 		]);
-	
-		$product = Product::find($id);
-		$product->edit($request->all()); // вызываем метод из модели
 		
-		return redirect()->route('products.index');
+		$category = Category::find($id);
+		$category->update($request->all());
+		
+		return redirect()->route('categories.index');
     }
 
     /**
@@ -91,7 +85,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        Product::find($id)->delete();
-		return redirect()->route('products.index');
+        Category::find($id)->delete();
+        return redirect()->route('categories.index');
     }
 }
