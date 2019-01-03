@@ -13,7 +13,7 @@
                         <div class="product-image-wrapper">
                             <div class="single-products">
                                 <div class="productinfo text-center">
-                                    <img src="" alt="img" />
+                                    <img src="{{$product->image}}" alt="img" />
                                     <h2>{{$product->price}} руб</h2>
                                     <p>
                                         <a href="{{route('product.show', $product->id)}}">
@@ -30,6 +30,11 @@
                         </div>
                     </div>
 				@endforeach
+            </div>
+
+            <!-- Постраничная навигация -->
+            <div class="pagination_block" style="text-align: center;">
+                {{$products->links()}}
             </div>
 
 

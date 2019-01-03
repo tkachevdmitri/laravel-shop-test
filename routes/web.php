@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('/product/{id}', 'HomeController@show')->name('product.show');
 Route::get('/category/{id}', 'HomeController@category')->name('category.show');
+Route::get('/catalog/', 'HomeController@catalog')->name('catalog');
 
 
 

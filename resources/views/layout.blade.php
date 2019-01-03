@@ -13,6 +13,12 @@
     <script src="js/html5shiv.js"></script>
     <![endif]-->
 
+    <style>
+        html, body{
+            height: 100%;
+        }
+    </style>
+
     <link rel="shortcut icon" href="/images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
@@ -50,7 +56,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+                        <a href="/"><img src="/images/home/logo.png" alt="" /></a>
                     </div>
                 </div>
                 <div class="col-sm-8">
@@ -80,10 +86,10 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="#">Главная</a></li>
-                            <li class="dropdown"><a href="#">Магазин<i class="fa fa-angle-down"></i></a>
+                            <li><a href="/">Главная</a></li>
+                            <li class="dropdown"><a href="{{route('catalog')}}">Магазин<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="#">Каталог товаров</a></li>
+                                    <li><a href="{{route('catalog')}}">Каталог товаров</a></li>
                                     <li><a href="#">Корзина</a></li>
                                 </ul>
                             </li>
@@ -103,52 +109,11 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-sm-3">
-                <div class="left-sidebar">
-                    <h2>Каталог</h2>
-                    <div class="panel-group category-products">
+            @include('_sidebar_category')
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">Категория</a></h4>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">Категория</a></h4>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">Категория</a></h4>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">Категория</a></h4>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">Категория</a></h4>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">Категория</a></h4>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">Категория</a></h4>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+            <div class="col-sm-9 padding-right">
+                @yield('content')
             </div>
-
-            @yield('content')
 
         </div>
     </div>

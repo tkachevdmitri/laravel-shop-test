@@ -6,10 +6,16 @@ use App\Category;
 use App\Product;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\ValidationCreateTrait;
+use Tests\ValidationTrait;
 
 class ExampleTest extends TestCase
 {
 	use RefreshDatabase;
+	
+	use ValidationTrait;
+	
+	use ValidationCreateTrait;
 	
 	// запуск тестов в консоли php vendor\phpunit\phpunit\phpunit
 	
@@ -107,6 +113,27 @@ class ExampleTest extends TestCase
 		$response = $this->productRequest($data);
 		$response->assertStatus(302);
 		$this->assertDatabaseMissing('products', $data);
+	}
+	
+	public function testAdminCantCreateProductRequiredValidation()
+	{
+		$data = $this->productData();
+		//$product = factory(Product::class)->create()->toArray();
+		//$category = Category::create(['title' => 'Test']);
+		
+		$arr = ['title' => '', 'article' => '', 'brand' => '', 'price' => '', 'category_id' => ''];
+		$input = array_merge($data, $arr);
+		
+		//$this->assertCantCreateProduct($input);
+	}
+	
+	public function testAdminCantCreateProductNumericValidation()
+	{
+		$arr = ['price' => 50];
+		$data = $this->productData();
+		$input = array_merge($data, $arr);
+		
+		$this->assertCantCreate($input, ['price']);
 	}
 	
 	/*
@@ -334,9 +361,165 @@ class ExampleTest extends TestCase
 	
 	
 	
+	// Товар (обновление)
+	private function assertCantUpdateProduct($product, $fields, $arr)
+	{
+		$data = array_merge($product->toArray(), $arr);
+		$this->assertCantUpdate(
+			'products',
+			'admin/products/'.$product->id,
+			$product->toArray(),
+			$fields,
+			$data
+		);
+	}
+	
+	/**
+	 * Тест: обновление товара из админки
+	 */
+	public function  testAdminUpdateProductName()
+	{
+		$input = $this->productData();
+		$product = factory(Product::class)->create($input);
+		$category = factory(Category::class)->create();
+
+		$data = [
+			'id' => ''.$product->id,
+			'title' => 'new name',
+			'price' => '456',
+			'article' => '123456',
+			'brand' => 'Brand',
+			'description' => 'Описание',
+			'category_id' => $category->id
+		];
+		
+		$this->assertDatabaseHas('products', array_merge(['id' => ''.$product->id], $input));
+		$response = $this->call('PUT', 'admin/products/'.$product->id, $data);
+		$this->assertDatabaseHas('products', $data);
+		$response->assertStatus(302);
+	}
+	
+	
+	/**
+	 * Тест: обновление товара, проверка обязательных полей
+	 */
+	public function  testAdminUpdateProductRequiredValidation()
+	{
+		$arr = ['title' => '', 'price' => '', 'article' => '', 'brand' => '', 'category_id' => ''];
+		$product = factory(Product::class)->create();
+		
+		
+		//$this->assertCantUpdate($product, ['title', 'price', 'article', 'category_id', 'brand'], $data);
+		$this->assertCantUpdateProduct(
+			$product,
+			['title', 'price', 'article', 'category_id', 'brand'],
+			$arr
+		);
+	}
+	
+	/**
+	 * Тест: обновление товара, проверка уникальных полей
+	 */
+	public function  testAdminUpdateProductUniqueValidation()
+	{
+		$arr = ['title' => 'Tovar 1', 'article' => 'Article 1'];
+		$product1 = factory(Product::class)->create($arr);
+		$product2 = factory(Product::class)->create();
+		
+		
+		//$this->assertCantUpdate($product2, ['title', 'article'], $data);
+		$this->assertCantUpdateProduct(
+			$product2,
+			['title', 'article'],
+			$arr
+		);
+	}
+	
+	/**
+	 * Тест: обновление товара, проверка numeric полей
+	 */
+	public function  testAdminUpdateProductNumericValidation()
+	{
+		$arr = ['price' => 'asdasdsa'];
+		$product1 = factory(Product::class)->create();
+		
+		//$this->assertCantUpdate($product1, ['price'], $data);
+		$this->assertCantUpdateProduct(
+			$product1,
+			['price'],
+			$arr
+		);
+	}
+	
+	/**
+	 * Тест: обновление товара, проверка min полей
+	 */
+	public function  testAdminUpdateProductMinValidation()
+	{
+		$arr = ['price' => -5];
+		$product = factory(Product::class)->create();
+
+		$this->assertCantUpdateProduct(
+			$product,
+			['price'],
+			$arr
+		);
+	}
+	
+	/**
+	 * Тест: обновление товара, проверка exists полей
+	 */
+	public function  testAdminUpdateProductExistsValidation()
+	{
+		
+		$product = factory(Product::class)->create();
+		//$category = factory(Category::class)->create();
+		$arr = ['category_id' => 555];
+		
+		
+		$this->assertCantUpdateProduct(
+			$product,
+			['category_id'],
+			$arr
+		);
+	}
+	
+	/**
+	 * Тест: обновление товара, проверка boolean полей
+	 */
+	public function  testAdminUpdateProductBooleanValidation()
+	{
+		$arr = ['is_new' => 'asdas', 'is_recommended' => 'sadas', 'status' => 'asdas'];
+		$product = factory(Product::class)->create();
+		
+		$this->assertCantUpdateProduct(
+			$product,
+			['is_new', 'is_recommended', 'status'],
+			$arr
+		);
+	}
+	
+	
+	
+	
+	
+	
 	// Категория
+	
+	private function assertCantUpdateCategory($category, $fields, $arr)
+	{
+		$data = array_merge($category->toArray(), $arr);
+		$this->assertCantUpdate(
+			'categories',
+			'admin/categories/'.$category->id,
+			$category->toArray(),
+			$fields,
+			$data
+		);
+	}
+	
 	/*
-	 * Тест: создание категории из админки (проверяет что  товар существует в БД)
+	 * Тест: создание категории из админки (проверяет что  категория существует в БД)
 	 */
 	public function testAdminCanCreateCategory()
 	{
@@ -348,7 +531,7 @@ class ExampleTest extends TestCase
 	}
 	
 	/*
-	 * Тест: создание категории из админки, с пустым названием (проверяет что  товар не существует в БД)
+	 * Тест: создание категории из админки, с пустым названием (проверяет что  категория не существует в БД)
 	 */
 	public function testAdminCanCreateCategoryNotTitle()
 	{
@@ -383,6 +566,19 @@ class ExampleTest extends TestCase
 		}
 	}
 	
+	
+	// Обновление категории, не работает
+	public function testAdminUpdateCategoryRequiredValidation()
+	{
+		$arr = ['title' => ''];
+		$category = factory(Category::class)->create();
+		
+		$this->assertCantUpdateCategory(
+			$category,
+			['title'],
+			$arr
+		);
+	}
 	
 	
 	

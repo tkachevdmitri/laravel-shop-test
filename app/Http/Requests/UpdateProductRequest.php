@@ -27,13 +27,13 @@ class UpdateProductRequest extends FormRequest
         return [
 			'title' => [
 				'required',
-				 //Rule::unique('products')->ignore($id),
+				 Rule::unique('products')->ignore($this->route('product')),
 			],
 			'price' => 'required|numeric|min:0',
 			'category_id' => 'required|exists:categories,id',
 			'article' => [
 				'required',
-				//Rule::unique('products')->ignore($id)
+				Rule::unique('products')->ignore($this->route('product')),
 			],
 			'brand' => 'required',
 			'is_new' => 'boolean',

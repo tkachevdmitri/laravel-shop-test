@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37693b27-0bcb-43e0-a938-d4a3cbe0a3a7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/_sidebar_category.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/catalog.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/ValidationCreateTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/ValidationTrait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreProductRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreProductRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ProductFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ProductFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_24_054154_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_24_054154_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_12_27_112200_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_12_27_112200_create_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreCategoryRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreCategoryRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateProductRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateProductRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,66 +32,83 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/Feature/ExampleTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="385" column="4" lean-forward="true" selection-start-line="385" selection-start-column="4" selection-end-line="385" selection-end-column="4" />
+            <state relative-caret-position="192">
+              <caret line="131" column="29" selection-start-line="131" selection-start-column="29" selection-end-line="131" selection-end-column="29" />
               <folding>
                 <element signature="e#33#50#0#PHP" expanded="true" />
-                <element signature="e#460#498#0#PHP" />
-                <element signature="e#496#587#0#PHP" />
-                <element signature="e#589#680#0#PHP" />
-                <element signature="e#664#811#0#PHP" />
-                <element signature="e#551#723#0#PHP" />
-                <element signature="e#765#918#0#PHP" />
-                <element signature="e#920#1099#0#PHP" />
-                <element signature="e#1101#1286#0#PHP" />
-                <element signature="e#1792#2126#0#PHP" />
-                <element signature="e#2242#2532#0#PHP" />
-                <element signature="e#2688#2987#0#PHP" />
-                <element signature="e#3095#3458#0#PHP" />
-                <element signature="e#3569#3855#0#PHP" />
-                <element signature="e#3979#4273#0#PHP" />
-                <element signature="e#4392#4691#0#PHP" />
-                <element signature="e#4804#5096#0#PHP" />
-                <element signature="e#5225#5477#0#PHP" />
-                <element signature="e#5447#5708#0#PHP" />
-                <element signature="e#5795#6047#0#PHP" />
-                <element signature="e#6230#6482#0#PHP" />
-                <element signature="e#6588#6836#0#PHP" />
-                <element signature="e#6956#7200#0#PHP" />
-                <element signature="e#7280#7520#0#PHP" />
-                <element signature="e#7674#7889#0#PHP" />
-                <element signature="e#8017#8257#0#PHP" />
-                <element signature="e#8405#8666#0#PHP" />
-                <element signature="e#8735#9022#0#PHP" />
-                <element signature="e#8806#9098#0#PHP" />
-                <element signature="e#9208#9456#0#PHP" />
-                <element signature="e#9545#9773#0#PHP" />
-                <element signature="e#10343#10737#0#PHP" />
+                <element signature="e#906#1053#0#PHP" />
+                <element signature="e#1331#1484#0#PHP" />
+                <element signature="e#1486#1665#0#PHP" />
+                <element signature="e#1667#1852#0#PHP" />
+                <element signature="e#1977#2269#0#PHP" />
+                <element signature="e#2387#2635#0#PHP" />
+                <element signature="e#3297#3554#0#PHP" />
+                <element signature="e#3662#3983#0#PHP" />
+                <element signature="e#4094#4338#0#PHP" />
+                <element signature="e#4462#4714#0#PHP" />
+                <element signature="e#4832#5089#0#PHP" />
+                <element signature="e#5202#5452#0#PHP" />
+                <element signature="e#5580#5841#0#PHP" />
+                <element signature="e#5953#6205#0#PHP" />
+                <element signature="e#6342#6637#0#PHP" />
+                <element signature="e#6747#6992#0#PHP" />
+                <element signature="e#7109#7324#0#PHP" />
+                <element signature="e#7442#7682#0#PHP" />
+                <element signature="e#7814#8076#0#PHP" />
+                <element signature="e#8201#8424#0#PHP" />
+                <element signature="e#8550#8806#0#PHP" />
+                <element signature="e#8938#9216#0#PHP" />
+                <element signature="e#9241#9635#0#PHP" />
+                <element signature="e#9478#10207#0#PHP" />
+                <element signature="e#10679#11111#0#PHP" />
+                <element signature="e#10999#11282#0#PHP" />
+                <element signature="e#11286#11495#0#PHP" />
+                <element signature="e#11734#11793#0#PHP" />
+                <element signature="e#11499#11784#0#PHP" />
+                <element signature="e#11788#12010#0#PHP" />
+                <element signature="e#12476#12724#0#PHP" />
+                <element signature="e#12516#12803#0#PHP" />
+                <element signature="e#12922#13150#0#PHP" />
+                <element signature="e#13317#13599#0#PHP" />
+                <element signature="e#13628#13988#0#PHP" />
+                <element signature="e#14332#14574#0#PHP" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/tests/ValidationTrait.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-              <folding>
-                <element signature="e#7#389#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="9" column="39" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php">
+        <entry file="file://$PROJECT_DIR$/tests/ValidationCreateTrait.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="70" column="8" lean-forward="true" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
-              <folding>
-                <element signature="e#46#63#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="12" column="51" lean-forward="true" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/factories/ProductFactory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/StoreProductRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="27" column="36" selection-start-line="27" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -100,6 +119,7 @@
     <findStrings>
       <find>src</find>
       <find>.login-form label input</find>
+      <find>prod</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -113,7 +133,6 @@
         <option value="$PROJECT_DIR$/database/factories/UserFactory.php" />
         <option value="$PROJECT_DIR$/resources/views/catalog.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/index.blade.php" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/layout.blade.php" />
@@ -123,25 +142,31 @@
         <option value="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/categories/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Category.php" />
-        <option value="$PROJECT_DIR$/resources/views/layout.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/category.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_12_24_054154_create_products_table.php" />
         <option value="$PROJECT_DIR$/phpunit.xml" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/StoreProductRequest.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_12_27_112200_create_categories_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/StoreCategoryRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/products/index.blade.php" />
-        <option value="$PROJECT_DIR$/database/factories/ProductFactory.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/products/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" />
         <option value="$PROJECT_DIR$/app/Product.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/UpdateProductRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/products/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/UpdateProductRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/StoreCategoryRequest.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/_sidebar_category.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layout.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/catalog.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/category.blade.php" />
+        <option value="$PROJECT_DIR$/database/factories/CategoryFactory.php" />
+        <option value="$PROJECT_DIR$/tests/ValidationTrait.php" />
+        <option value="$PROJECT_DIR$/database/factories/ProductFactory.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/StoreProductRequest.php" />
+        <option value="$PROJECT_DIR$/tests/ValidationCreateTrait.php" />
         <option value="$PROJECT_DIR$/tests/Feature/ExampleTest.php" />
       </list>
     </option>
@@ -245,8 +270,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="1876" />
+    <option name="y" value="90" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
@@ -256,6 +281,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -316,52 +342,19 @@
             <path>
               <item name="lara-shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="lara-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lara-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lara-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lara-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lara-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lara-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lara-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="categories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lara-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lara-shop" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lara-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lara-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="Unit" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Constants" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/phpunit.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laravel-blog" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -388,25 +381,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.ExampleTest">
+  <component name="RunManager" selected="PHPUnit.ExampleTest.testAdminCantCreateProductNumericValidation">
     <configuration name="ExampleTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\ExampleTest" file="$PROJECT_DIR$/tests/Feature/ExampleTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="ExampleTest.testAdminNotCanCreateProductNotArticle" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ExampleTest" file="$PROJECT_DIR$/tests/Feature/ExampleTest.php" method="testAdminNotCanCreateProductNotArticle" scope="Method" />
+    <configuration name="ExampleTest.testAdminCantCreateProductNumericValidation" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ExampleTest" file="$PROJECT_DIR$/tests/Feature/ExampleTest.php" method="testAdminCantCreateProductNumericValidation" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ExampleTest.testAdminNotCanCreateProductNotUniqueArticle" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ExampleTest" file="$PROJECT_DIR$/tests/Feature/ExampleTest.php" method="testAdminNotCanCreateProductNotUniqueArticle" scope="Method" />
+    <configuration name="ExampleTest.testAdminCantCreateProductRequiredValidation" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ExampleTest" file="$PROJECT_DIR$/tests/Feature/ExampleTest.php" method="testAdminCantCreateProductRequiredValidation" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ExampleTest.testAdminRemoveCategory" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ExampleTest" file="$PROJECT_DIR$/tests/Feature/ExampleTest.php" method="testAdminRemoveCategory" scope="Method" />
+    <configuration name="ExampleTest.testAdminNotCanCreateProductNotPrice" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ExampleTest" file="$PROJECT_DIR$/tests/Feature/ExampleTest.php" method="testAdminNotCanCreateProductNotPrice" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ExampleTest.testAdminRemoveProduct" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ExampleTest" file="$PROJECT_DIR$/tests/Feature/ExampleTest.php" method="testAdminRemoveProduct" scope="Method" />
+    <configuration name="ExampleTest.testAdminNotCanCreateProductNotUnique" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ExampleTest" file="$PROJECT_DIR$/tests/Feature/ExampleTest.php" method="testAdminNotCanCreateProductNotUnique" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="Unnamed" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" nameIsGenerated="true">
@@ -415,19 +408,19 @@
     </configuration>
     <list>
       <item itemvalue="PHPUnit.Unnamed" />
+      <item itemvalue="PHPUnit.ExampleTest.testAdminNotCanCreateProductNotPrice" />
       <item itemvalue="PHPUnit.ExampleTest" />
-      <item itemvalue="PHPUnit.ExampleTest.testAdminNotCanCreateProductNotArticle" />
-      <item itemvalue="PHPUnit.ExampleTest.testAdminNotCanCreateProductNotUniqueArticle" />
-      <item itemvalue="PHPUnit.ExampleTest.testAdminRemoveProduct" />
-      <item itemvalue="PHPUnit.ExampleTest.testAdminRemoveCategory" />
+      <item itemvalue="PHPUnit.ExampleTest.testAdminCantCreateProductRequiredValidation" />
+      <item itemvalue="PHPUnit.ExampleTest.testAdminNotCanCreateProductNotUnique" />
+      <item itemvalue="PHPUnit.ExampleTest.testAdminCantCreateProductNumericValidation" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.ExampleTest.testAdminCantCreateProductNumericValidation" />
+        <item itemvalue="PHPUnit.ExampleTest.testAdminNotCanCreateProductNotUnique" />
+        <item itemvalue="PHPUnit.ExampleTest.testAdminCantCreateProductRequiredValidation" />
         <item itemvalue="PHPUnit.ExampleTest" />
-        <item itemvalue="PHPUnit.ExampleTest.testAdminRemoveCategory" />
-        <item itemvalue="PHPUnit.ExampleTest.testAdminRemoveProduct" />
-        <item itemvalue="PHPUnit.ExampleTest.testAdminNotCanCreateProductNotUniqueArticle" />
-        <item itemvalue="PHPUnit.ExampleTest.testAdminNotCanCreateProductNotArticle" />
+        <item itemvalue="PHPUnit.ExampleTest.testAdminNotCanCreateProductNotPrice" />
       </list>
     </recent_temporary>
   </component>
@@ -447,52 +440,54 @@
       <workItem from="1545745399017" duration="3395000" />
       <workItem from="1545813444805" duration="13792000" />
       <workItem from="1545895187184" duration="18734000" />
-      <workItem from="1545970462922" duration="33553000" />
+      <workItem from="1545970462922" duration="34099000" />
+      <workItem from="1546239867406" duration="4960000" />
+      <workItem from="1546495660476" duration="21607000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExampleTest_testAdminRemoveProduct - 2018.12.28 at 16h 40m 13s.xml">
-      <configuration name="ExampleTest.testAdminRemoveProduct" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExampleTest_testAdminCantCreateProductNumericValidation - 2019.01.03 at 15h 02m 23s.xml">
+      <configuration name="ExampleTest.testAdminCantCreateProductNumericValidation" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ExampleTest_testAdminRemoveProduct - 2018.12.28 at 16h 40m 24s.xml">
-      <configuration name="ExampleTest.testAdminRemoveProduct" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExampleTest_testAdminCantCreateProductNumericValidation - 2019.01.03 at 15h 02m 52s.xml">
+      <configuration name="ExampleTest.testAdminCantCreateProductNumericValidation" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ExampleTest_testAdminRemoveProduct - 2018.12.28 at 16h 40m 35s.xml">
-      <configuration name="ExampleTest.testAdminRemoveProduct" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExampleTest_testAdminCantCreateProductNumericValidation - 2019.01.03 at 15h 02m 58s.xml">
+      <configuration name="ExampleTest.testAdminCantCreateProductNumericValidation" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ExampleTest_testAdminRemoveProduct - 2018.12.28 at 16h 41m 07s.xml">
-      <configuration name="ExampleTest.testAdminRemoveProduct" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExampleTest_testAdminCantCreateProductNumericValidation - 2019.01.03 at 15h 03m 09s.xml">
+      <configuration name="ExampleTest.testAdminCantCreateProductNumericValidation" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ExampleTest_testAdminRemoveProduct - 2018.12.28 at 16h 41m 44s.xml">
-      <configuration name="ExampleTest.testAdminRemoveProduct" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExampleTest_testAdminCantCreateProductNumericValidation - 2019.01.03 at 15h 04m 45s.xml">
+      <configuration name="ExampleTest.testAdminCantCreateProductNumericValidation" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ExampleTest_testAdminRemoveCategory - 2018.12.28 at 16h 43m 22s.xml">
-      <configuration name="ExampleTest.testAdminRemoveCategory" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExampleTest_testAdminCantCreateProductNumericValidation - 2019.01.03 at 15h 04m 53s.xml">
+      <configuration name="ExampleTest.testAdminCantCreateProductNumericValidation" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ExampleTest_testAdminRemoveCategory - 2018.12.28 at 16h 43m 33s.xml">
-      <configuration name="ExampleTest.testAdminRemoveCategory" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExampleTest_testAdminCantCreateProductNumericValidation - 2019.01.03 at 15h 05m 59s.xml">
+      <configuration name="ExampleTest.testAdminCantCreateProductNumericValidation" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ExampleTest_testAdminRemoveCategory - 2018.12.28 at 16h 43m 53s.xml">
-      <configuration name="ExampleTest.testAdminRemoveCategory" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExampleTest_testAdminCantCreateProductNumericValidation - 2019.01.03 at 15h 09m 11s.xml">
+      <configuration name="ExampleTest.testAdminCantCreateProductNumericValidation" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ExampleTest_testAdminRemoveCategory - 2018.12.28 at 16h 44m 06s.xml">
-      <configuration name="ExampleTest.testAdminRemoveCategory" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExampleTest_testAdminCantCreateProductNumericValidation - 2019.01.03 at 15h 09m 52s.xml">
+      <configuration name="ExampleTest.testAdminCantCreateProductNumericValidation" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="ExampleTest - 2018.12.28 at 16h 44m 32s.xml">
-      <configuration name="ExampleTest" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExampleTest_testAdminCantCreateProductNumericValidation - 2019.01.03 at 15h 09m 58s.xml">
+      <configuration name="ExampleTest.testAdminCantCreateProductNumericValidation" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81397000" />
+    <option name="totallyTimeSpent" value="108510000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.22768533" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.16577825" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
@@ -501,7 +496,7 @@
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.3846154" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.3846154" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.512275" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -511,53 +506,11 @@
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info id="npm" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.2118003" />
-      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Database Changes" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="right" id="Database" order="0" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/factories/UserFactory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -572,13 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.mix.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-205">
@@ -587,9 +533,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/CreatesApplication.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/TestCase.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/Unit/ExampleTest.php">
@@ -638,45 +581,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-239">
-          <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="48" lean-forward="true" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="149" lean-forward="true" selection-start-line="149" selection-end-line="149" />
-          <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="87" selection-start-line="20" selection-start-column="78" selection-end-line="20" selection-end-column="87" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
@@ -718,13 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_24_054154_create_products_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_27_112200_create_categories_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -753,31 +654,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/ProductFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/products/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/products/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/StoreProductRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -788,63 +668,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/UpdateProductRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
-          <folding>
-            <element signature="e#37#80#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
-          <folding>
-            <element signature="e#46#63#0#PHP" expanded="true" />
-            <element signature="e#285#416#0#PHP" />
-            <element signature="e#621#780#0#PHP" />
-            <element signature="e#1099#1239#0#PHP" />
-            <element signature="e#2100#2224#0#PHP" />
-            <marker date="1546006838245" expanded="true" signature="1166:1224" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/products/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="48" column="44" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/StoreCategoryRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
-          <folding>
-            <element signature="e#445#637#0#PHP" />
-            <element signature="e#681#757#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -855,60 +682,241 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/products/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/StoreCategoryRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <element signature="e#37#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+        <state relative-caret-position="238">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="70" column="8" lean-forward="true" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
+        <state relative-caret-position="311">
+          <caret line="61" column="49" lean-forward="true" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
           <folding>
             <element signature="e#46#63#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/_sidebar_category.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="82" lean-forward="true" selection-start-line="8" selection-start-column="82" selection-end-line="8" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="18" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="67" lean-forward="true" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="91" column="57" selection-start-line="91" selection-start-column="57" selection-end-line="91" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="49" lean-forward="true" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="22" column="55" lean-forward="true" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+          <folding>
+            <element signature="e#40#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/catalog.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="35" selection-end-column="14" />
+          <folding>
+            <element signature="e#1376#1403#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="868" column="20" selection-start-line="868" selection-start-column="20" selection-end-line="868" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_8.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="1151" column="9" selection-start-line="1151" selection-start-column="9" selection-end-line="1151" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/category.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+          <folding>
+            <element signature="e#1517#1544#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/UpdateProductRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="32" column="56" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="56" />
+          <folding>
+            <element signature="e#37#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="83" column="47" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="47" />
+          <folding>
+            <element signature="e#46#63#0#PHP" expanded="true" />
+            <marker date="1546006838245" expanded="true" signature="1166:1224" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_24_054154_create_products_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/CategoryFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/TestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/StoreProductRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="27" column="36" selection-start-line="27" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/ProductFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ValidationTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ValidationCreateTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="51" lean-forward="true" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/Feature/ExampleTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="385" column="4" lean-forward="true" selection-start-line="385" selection-start-column="4" selection-end-line="385" selection-end-column="4" />
+        <state relative-caret-position="192">
+          <caret line="131" column="29" selection-start-line="131" selection-start-column="29" selection-end-line="131" selection-end-column="29" />
           <folding>
             <element signature="e#33#50#0#PHP" expanded="true" />
-            <element signature="e#460#498#0#PHP" />
-            <element signature="e#496#587#0#PHP" />
-            <element signature="e#589#680#0#PHP" />
-            <element signature="e#664#811#0#PHP" />
-            <element signature="e#551#723#0#PHP" />
-            <element signature="e#765#918#0#PHP" />
-            <element signature="e#920#1099#0#PHP" />
-            <element signature="e#1101#1286#0#PHP" />
-            <element signature="e#1792#2126#0#PHP" />
-            <element signature="e#2242#2532#0#PHP" />
-            <element signature="e#2688#2987#0#PHP" />
-            <element signature="e#3095#3458#0#PHP" />
-            <element signature="e#3569#3855#0#PHP" />
-            <element signature="e#3979#4273#0#PHP" />
-            <element signature="e#4392#4691#0#PHP" />
-            <element signature="e#4804#5096#0#PHP" />
-            <element signature="e#5225#5477#0#PHP" />
-            <element signature="e#5447#5708#0#PHP" />
-            <element signature="e#5795#6047#0#PHP" />
-            <element signature="e#6230#6482#0#PHP" />
-            <element signature="e#6588#6836#0#PHP" />
-            <element signature="e#6956#7200#0#PHP" />
-            <element signature="e#7280#7520#0#PHP" />
-            <element signature="e#7674#7889#0#PHP" />
-            <element signature="e#8017#8257#0#PHP" />
-            <element signature="e#8405#8666#0#PHP" />
-            <element signature="e#8735#9022#0#PHP" />
-            <element signature="e#8806#9098#0#PHP" />
-            <element signature="e#9208#9456#0#PHP" />
-            <element signature="e#9545#9773#0#PHP" />
-            <element signature="e#10343#10737#0#PHP" />
+            <element signature="e#906#1053#0#PHP" />
+            <element signature="e#1331#1484#0#PHP" />
+            <element signature="e#1486#1665#0#PHP" />
+            <element signature="e#1667#1852#0#PHP" />
+            <element signature="e#1977#2269#0#PHP" />
+            <element signature="e#2387#2635#0#PHP" />
+            <element signature="e#3297#3554#0#PHP" />
+            <element signature="e#3662#3983#0#PHP" />
+            <element signature="e#4094#4338#0#PHP" />
+            <element signature="e#4462#4714#0#PHP" />
+            <element signature="e#4832#5089#0#PHP" />
+            <element signature="e#5202#5452#0#PHP" />
+            <element signature="e#5580#5841#0#PHP" />
+            <element signature="e#5953#6205#0#PHP" />
+            <element signature="e#6342#6637#0#PHP" />
+            <element signature="e#6747#6992#0#PHP" />
+            <element signature="e#7109#7324#0#PHP" />
+            <element signature="e#7442#7682#0#PHP" />
+            <element signature="e#7814#8076#0#PHP" />
+            <element signature="e#8201#8424#0#PHP" />
+            <element signature="e#8550#8806#0#PHP" />
+            <element signature="e#8938#9216#0#PHP" />
+            <element signature="e#9241#9635#0#PHP" />
+            <element signature="e#9478#10207#0#PHP" />
+            <element signature="e#10679#11111#0#PHP" />
+            <element signature="e#10999#11282#0#PHP" />
+            <element signature="e#11286#11495#0#PHP" />
+            <element signature="e#11734#11793#0#PHP" />
+            <element signature="e#11499#11784#0#PHP" />
+            <element signature="e#11788#12010#0#PHP" />
+            <element signature="e#12476#12724#0#PHP" />
+            <element signature="e#12516#12803#0#PHP" />
+            <element signature="e#12922#13150#0#PHP" />
+            <element signature="e#13317#13599#0#PHP" />
+            <element signature="e#13628#13988#0#PHP" />
+            <element signature="e#14332#14574#0#PHP" />
           </folding>
         </state>
       </provider>
