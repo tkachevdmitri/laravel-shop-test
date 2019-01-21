@@ -12,14 +12,14 @@
                 <div class="product-image-wrapper">
                     <div class="single-products">
                         <div class="productinfo text-center">
-                            <img src="{{$product->image}}" alt="{{$product->title}}" />
+                            <img src="{{$product->getImage()}}" alt="{{$product->title}}" />
                             <h2>{{$product->price}} руб</h2>
                             <p>
                                 <a href="{{route('product.show', $product->id)}}">
                                     {{$product->title}}
                                 </a>
                             </p>
-                            <a href="#" data-id="{{$product->id}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                            <a href="{{route('cart.add', $product->id)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                         </div>
                         @if($product->is_new)
                             <img src="/images/home/new.png" class="new" alt="new">

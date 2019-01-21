@@ -24,7 +24,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
-</head><!--/head-->
+</head><!--/head--></div>
 
 <body>
 <header id="header"><!--header-->
@@ -119,14 +119,10 @@
     <div class="container">
         <div class="row">
 
-            @include('_sidebar_category')
-
-            <div class="col-sm-9 padding-right">
-                @yield('content')
-            </div>
+            @yield('content')
 
         </div>
-    </div>
+
 </section>
 
 <footer id="footer"><!--Footer-->

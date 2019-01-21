@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -52,6 +53,14 @@ class ProductController extends Controller
 		if(!$request->get('status')){
 			$product->status = 0;
 		}
+		
+		// Обработка изображений
+		if($request->image !== null){
+			$path = Storage::disk('products')->putFile(
+				'/', $request->file('image')
+			);
+			$product->image = $path;
+		}
 		$product->save();
 		
 		return redirect()->route('products.index');
@@ -86,15 +95,26 @@ class ProductController extends Controller
 	
 		$product = Product::find($id);
 		$product->fill($request->all());
+		
 		if(!$request->get('is_new')){
 			$product->is_new = 0;
 		}
 		if(!$request->get('is_recommended')){
 			$product->is_recommended = 0;
 		}
-		if(!$request->get('status')){
+		if(!$request->get('status')) {
 			$product->status = 0;
 		}
+	
+		// Обработка изображений
+		$product->removeImage();
+		if($request->image !== null){
+			$path = Storage::disk('products')->putFile(
+				'/', $request->file('image')
+			);
+			$product->image = $path;
+		}
+		
 		$product->save();
 		
 		
@@ -111,7 +131,12 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        Product::find($id)->delete();
+		//Product::find($id)->delete();
+		
+    	$product = Product::find($id);
+		$product->removeImage();
+		$product->delete();
+		
 		return redirect()->route('products.index');
     }
     

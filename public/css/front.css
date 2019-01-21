@@ -1803,6 +1803,16 @@ h2.title {
   width: 100%;
 }
 
+.signup-form form .form-check-input, .login-form form .form-check-input{
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: sub;
+  margin-left: 5px;
+}
+
+.login-form form input, .signup-form form input
+
 .login-form form textarea, .signup-form form textarea{
   background: #F0F0E9;
   border: medium none;

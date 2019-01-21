@@ -29,6 +29,7 @@ class StoreProductRequest extends FormRequest
 			'category_id' => 'required|exists:categories,id',
 			'article' => 'required|unique:products',
 			'brand' => 'required',
+			'image' => 'nullable|image',
 			'is_new' => 'boolean',
 			'is_recommended' => 'boolean',
 			'status' => 'boolean',

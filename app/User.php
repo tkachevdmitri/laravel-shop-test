@@ -27,4 +27,22 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    
+    public static function checkAdmin()
+	{
+		if(Auth::check()){
+			$user = Auth::user();
+			if($user->is_admin){
+				return view('admin.index');
+			}
+			die('acces denied');
+		}
+	}
+	
+	public static function test()
+	{
+		dd('asdasd');
+	}
+    
 }

@@ -13,7 +13,7 @@
                         <div class="product-image-wrapper">
                             <div class="single-products">
                                 <div class="productinfo text-center">
-                                    <img src="{{$product->image}}" alt="img" />
+                                    <img src="{{$product->getImage()}}" alt="img" />
                                     <h2>{{$product->price}} руб</h2>
                                     <p>
                                         <a href="{{route('product.show', $product->id)}}">

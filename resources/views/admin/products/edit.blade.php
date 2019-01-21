@@ -52,7 +52,7 @@
                             -->
                             {{Form::select('category_id',
                                 $categories,
-                                $product->getCategoryID()
+                                $product->category->id
                                 )
                             }}
                             <br><br>
@@ -64,6 +64,7 @@
                             <input type="text" name="brand" placeholder="" value="{{$product->brand}}">
 
                             <p>Изображение товара</p>
+                            <img src="{{$product->getImage()}}" alt="{{$product->title}}">
                             <input type="file" name="image" placeholder="" value="">
 
                             <p>Опписание</p>
