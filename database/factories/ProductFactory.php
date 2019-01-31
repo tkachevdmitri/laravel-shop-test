@@ -17,7 +17,7 @@ $factory->define(App\Product::class, function (Faker $faker) {
     return [
         'title' => $faker->name,
         'price' => $faker->randomDigit,
-		'article' => $faker->randomDigit,
+		'article' => $faker->unique()->randomDigit,
 		'brand' => 'Adidas',
 		'description' => 'Описание товара',
 		'category_id' => 1

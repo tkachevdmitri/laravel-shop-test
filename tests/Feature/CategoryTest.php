@@ -25,7 +25,7 @@ class CategoryTest extends TestCase
 	 * @param $category
 	 * @param $arr
 	 * @param $fields
-	 * Метод для тестирования создания товара
+	 * Метод для тестирования создания категории
 	 */
 	private function assertCantCreateCategory($category, $arr, $fields)
 	{

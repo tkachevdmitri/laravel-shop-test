@@ -19,7 +19,7 @@
                                     {{$product->title}}
                                 </a>
                             </p>
-                            <a href="{{route('cart.add', $product->id)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                         </div>
                         @if($product->is_new)
                             <img src="/images/home/new.png" class="new" alt="new">

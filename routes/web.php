@@ -33,3 +33,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
 // роуты для авторизации (сгенерировались сами)
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Route::post('/cart/add/', 'CartController@add');
+Route::post('/cart/remove/', 'CartController@remove');
+Route::get('/cart/clear/', 'CartController@clear');
+Route::get('/cart/', 'CartController@get');
