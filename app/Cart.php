@@ -5,10 +5,23 @@ namespace App;
 
 class Cart
 {
+	private static $instance = null;
 	public $content;
 	
+	/*
+	 * @return Cart
+	*/
+	public static function getInstance()
+	{
+		if (null === self::$instance)
+		{
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
 	
-	public function __construct()
+	//private function __clone() {}
+	private function __construct()
 	{
 		session()->has('cart') ? $this->content = session()->get('cart') : $this->content = ['products' => []];
 	}
@@ -25,14 +38,36 @@ class Cart
 	public function add($data)
 	{
 		if(count($this->content['products'])){
+			/*
 			foreach ($this->content['products'] as $key => $product){
 				if($product['id'] == $data['id']){
+					echo 'увеличили кол-во существующего товара';
 					$this->content['products'][$key]['count'] += $data['count'];
+					break;
 				} else {
+					echo 'добавили новый товар в корзину с товарами';
 					$this->content['products'][] = $data;
+					break;
 				}
 			}
+			*/
+			
+			$inCart = false;
+			foreach ($this->content['products'] as $key => $product){
+				if($product['id'] == $data['id']){
+					//echo 'увеличили кол-во существующего товара';
+					$this->content['products'][$key]['count'] += $data['count'];
+					$inCart = true;
+					break;
+				}
+			}
+			if(!$inCart){
+				//echo 'добавили новый товар в корзину с товарами';
+				$this->content['products'][] = $data;
+			}
+			
 		} else {
+			//echo 'товар добавили в пустую корзину';
 			$this->content['products'][] = $data;
 		}
 	}

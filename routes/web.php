@@ -36,7 +36,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::post('/cart/add/', 'CartController@add');
-Route::post('/cart/remove/', 'CartController@remove');
-Route::get('/cart/clear/', 'CartController@clear');
-Route::get('/cart/', 'CartController@get');
+Route::post('/cart/add/', 'CartController@add')->name('cart.add');
+Route::post('/cart/remove/', 'CartController@remove')->name('cart.remove');
+Route::get('/cart/clear/', 'CartController@clear')->name('cart.clear');
+Route::get('/cart/', 'CartController@get')->name('cart.get');

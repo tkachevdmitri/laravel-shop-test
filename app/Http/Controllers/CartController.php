@@ -8,19 +8,27 @@ use App\Cart;
 class CartController extends Controller
 {
     public function add(Request $request){
-    	$cart = new Cart;
+    	//dd($request->get('product'));
+    	$cart = Cart::getInstance();
     	$cart->add($request->get('product'));
+		//return redirect()->back();
 	}
 	
 	public function remove(Request $request)
 	{
-		$cart = new Cart;
+		$cart = Cart::getInstance();
 		$cart->remove($request->get('product'));
+	}
+	
+	public function clear()
+	{
+		$cart = Cart::getInstance();
+		return $cart->clear();
 	}
 	
 	public function get()
 	{
-		$cart = new Cart;
+		$cart = Cart::getInstance();
 		return $cart->get();
 	}
 }

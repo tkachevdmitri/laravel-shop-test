@@ -15,7 +15,9 @@ class CategoryTest extends TestCase
 	use RefreshDatabase;
 	
 	
-	
+	/*
+	 * Тест: пользователь может добавить 1 товар в корзину
+	 */
 	public function testUserCanAddProductInCart()
 	{
 		$product = factory(Product::class)->create();
@@ -27,7 +29,9 @@ class CategoryTest extends TestCase
 		$response->assertSessionHas(['cart' => ['products' => [$product_data]]]);
 	}
 	
-	
+	/*
+	 * Тест: пользователь может добавить 2 разных товара в корзину
+	 */
 	public function testUserCanAddTwoProductInCart()
 	{
 		// добавление первого товара
@@ -47,7 +51,9 @@ class CategoryTest extends TestCase
 		$response->assertSessionHas(['cart' => ['products' => [$product_data, $product_data2]]]);
 	}
 	
-	
+	/*
+	 * Тест: пользователь может удалить товар из корзины
+	 */
 	public function testUserCanRemoveProductInCart()
 	{
 		// добавление первого товара

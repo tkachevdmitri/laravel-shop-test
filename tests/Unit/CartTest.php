@@ -18,7 +18,7 @@ class ExampleTest extends TestCase
 	public function testCartAddMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = new Cart();
+		$cart = Cart::getInstance();
 		
 		// создаем продукт
 		$product = factory(Product::class)->create();
@@ -38,7 +38,7 @@ class ExampleTest extends TestCase
 	public function testCartAddTwoProductMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = new Cart();
+		$cart = Cart::getInstance();
 		
 		// создаем 1й продукт и массив с данными
 		$product = factory(Product::class)->create();
@@ -65,7 +65,7 @@ class ExampleTest extends TestCase
 	public function testCartAddTwoSameProductMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = new Cart();
+		$cart = Cart::getInstance();
 		
 		// создаем продукт и массив с данными
 		$product = factory(Product::class)->create();
@@ -80,6 +80,32 @@ class ExampleTest extends TestCase
 		$this->assertEquals([ 'products' => [['id' => $product->id, 'count' => 2, 'price' => 100]] ], $cart->content);
 	}
 	
+	/*
+	 * Тест: тестирование метода add, добавление нескольких товаров несколько раз
+	 */
+	public function testCartAddTwoSameProductsMethod()
+	{
+		// создаем экземпляр корзины
+		$cart = Cart::getInstance();
+		
+		// создаем 1 продукт и массив с данными
+		$product = factory(Product::class)->create();
+		$product_data = ['id' => $product->id, 'count' => 1, 'price' => 100];
+		
+		// создаем 2 продукт и массив с данными
+		$product2 = factory(Product::class)->create();
+		$product_data2 = ['id' => $product2->id, 'count' => 1, 'price' => 1000];
+		
+		// добавляем 1 продукт и проверяем его наличие в корзине
+		$cart->add($product_data);
+		$cart->add($product_data2);
+		$cart->add($product_data);
+		$cart->add($product_data2);
+		//$this->assertEquals(['products' => [$product_data]], $cart->content);
+
+		$this->assertEquals([ 'products' => [['id' => $product->id, 'count' => 2, 'price' => 100], ['id' => $product2->id, 'count' => 2, 'price' => 1000]] ], $cart->content);
+	}
+	
 	
 	/*
 	 * Тест: тестирование метода remove, удаление одной единицы товара
@@ -87,7 +113,7 @@ class ExampleTest extends TestCase
 	public function testCartRemoveOneProductMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = new Cart();
+		$cart = Cart::getInstance();
 		
 		// создаем продукт и массив с данными
 		$product = factory(Product::class)->create();
@@ -110,7 +136,7 @@ class ExampleTest extends TestCase
 	public function testCartRemoveSomeProductMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = new Cart();
+		$cart = Cart::getInstance();
 		
 		// создаем продукт и массив с данными
 		$product = factory(Product::class)->create();
@@ -132,7 +158,7 @@ class ExampleTest extends TestCase
 	public function testCartRemoveMoreProductMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = new Cart();
+		$cart = Cart::getInstance();
 		
 		// создаем продукты и массивы с данными
 		$product = factory(Product::class)->create();
@@ -161,7 +187,7 @@ class ExampleTest extends TestCase
 	public function testCartClearMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = new Cart();
+		$cart = Cart::getInstance();
 		
 		// создаем продукты и массивы с данными
 		$product = factory(Product::class)->create();
@@ -189,7 +215,7 @@ class ExampleTest extends TestCase
 	public function testCartGetMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = new Cart();
+		$cart = Cart::getInstance();
 		
 		// создаем продукты и массивы с данными
 		$product = factory(Product::class)->create();
