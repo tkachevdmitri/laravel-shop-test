@@ -21,7 +21,7 @@ class PageController extends Controller
 		$categories = Category::all();
 		
 		$category = Category::where('id', $id)->firstOrFail();
-		$products = $category->products()->paginate(2);
+		$products = $category->products()->paginate(3);
 		
 		return view('pages.category', ['category' => $category, 'products' => $products, 'categories' => $categories]);
 	}

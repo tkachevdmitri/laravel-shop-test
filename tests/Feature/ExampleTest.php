@@ -102,6 +102,7 @@ class ExampleTest extends TestCase
 	
 	// ADMIN TESTS
 	// статусы страниц
+	/*
 	public function testAdminPageStatus()
 	{
 		$response = $this->get('/admin');
@@ -120,6 +121,6 @@ class ExampleTest extends TestCase
 		$response->assertStatus(200);
 		$response->assertViewIs('admin.categories.index');
 	}
-	
+	*/
 	
 }

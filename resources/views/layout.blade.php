@@ -62,7 +62,7 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
+                            <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Корзина ( {{ \App\Cart::getCount()}} )</a></li>
                             @guest
                                 <li><a href="{{ route('login') }}"><i class="fa fa-lock"></i> Вход</a></li>
                                 <li><a href="{{ route('register') }}"><i class="fa fa-user"></i> Регистрация</a></li>
@@ -100,7 +100,7 @@
                             <li class="dropdown"><a href="{{route('catalog')}}">Магазин<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="{{route('catalog')}}">Каталог товаров</a></li>
-                                    <li><a href="/cart">Корзина</a></li>
+                                    <li><a href="/cart">Корзина (0)</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Блог</a></li>
@@ -143,5 +143,32 @@
 
 
 <script src="/js/front.js"></script>
+
+<script>
+    /*
+    $('.tovar_form').on('submit', function(e){
+        e.preventDefault();
+
+        var token = $('meta[name="csrf-token"]').attr('content');
+
+        $.ajax({
+            type: 'POST',
+            url: '/cart/add/',
+            dataType: 'JSON',
+            data: {
+                "_method": 'POST',
+                "_token": token,
+                'product': $('.tovar_form').serialize()
+            },
+            //$('.tovar_form').serialize(),
+            success: function(result){
+                console.log(result);
+            }
+        });
+    });
+    */
+</script>
+
+
 </body>
 </html>

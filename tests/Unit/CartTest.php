@@ -18,7 +18,8 @@ class ExampleTest extends TestCase
 	public function testCartAddMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = Cart::getInstance();
+		//$cart = Cart::getInstance();
+		$cart = new Cart();
 		
 		// создаем продукт
 		$product = factory(Product::class)->create();
@@ -38,7 +39,8 @@ class ExampleTest extends TestCase
 	public function testCartAddTwoProductMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = Cart::getInstance();
+		//$cart = Cart::getInstance();
+		$cart = new Cart();
 		
 		// создаем 1й продукт и массив с данными
 		$product = factory(Product::class)->create();
@@ -65,7 +67,8 @@ class ExampleTest extends TestCase
 	public function testCartAddTwoSameProductMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = Cart::getInstance();
+		//$cart = Cart::getInstance();
+		$cart = new Cart();
 		
 		// создаем продукт и массив с данными
 		$product = factory(Product::class)->create();
@@ -86,7 +89,8 @@ class ExampleTest extends TestCase
 	public function testCartAddTwoSameProductsMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = Cart::getInstance();
+		//$cart = Cart::getInstance();
+		$cart = new Cart();
 		
 		// создаем 1 продукт и массив с данными
 		$product = factory(Product::class)->create();
@@ -113,7 +117,8 @@ class ExampleTest extends TestCase
 	public function testCartRemoveOneProductMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = Cart::getInstance();
+		//$cart = Cart::getInstance();
+		$cart = new Cart();
 		
 		// создаем продукт и массив с данными
 		$product = factory(Product::class)->create();
@@ -136,7 +141,8 @@ class ExampleTest extends TestCase
 	public function testCartRemoveSomeProductMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = Cart::getInstance();
+		//$cart = Cart::getInstance();
+		$cart = new Cart();
 		
 		// создаем продукт и массив с данными
 		$product = factory(Product::class)->create();
@@ -158,7 +164,8 @@ class ExampleTest extends TestCase
 	public function testCartRemoveMoreProductMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = Cart::getInstance();
+		//$cart = Cart::getInstance();
+		$cart = new Cart();
 		
 		// создаем продукты и массивы с данными
 		$product = factory(Product::class)->create();
@@ -187,7 +194,8 @@ class ExampleTest extends TestCase
 	public function testCartClearMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = Cart::getInstance();
+		//$cart = Cart::getInstance();
+		$cart = new Cart();
 		
 		// создаем продукты и массивы с данными
 		$product = factory(Product::class)->create();
@@ -215,7 +223,8 @@ class ExampleTest extends TestCase
 	public function testCartGetMethod()
 	{
 		// создаем экземпляр корзины
-		$cart = Cart::getInstance();
+		//$cart = Cart::getInstance();
+		$cart = new Cart();
 		
 		// создаем продукты и массивы с данными
 		$product = factory(Product::class)->create();
@@ -235,5 +244,82 @@ class ExampleTest extends TestCase
 		// проверяем что получили товары которые добавляли
 		$this->assertEquals([$product_data, $product_data2], $products);
 	}
+	
+	/*
+	 * Тест: тестирование метода getTotalCost, получение общей суммы товаров
+	 */
+	public function testCartGetTotalCostMethod()
+	{
+		// создаем экземпляр корзины
+		$cart = new Cart();
+		
+		// создаем продукты и массивы с данными
+		$product = factory(Product::class)->create();
+		$product_data = ['id' => $product->id, 'count' => 2, 'price' => 1000];
+		$cart->add($product_data);
+		
+		// проверяем что товары есть в корзине
+		$this->assertEquals(['products' => [$product_data]], $cart->content);
+		
+		// получаем общую стоимость товаров
+		$totalCost = $cart->getTotalCost();
+		
+		// проверяем что получили товары которые добавляли
+		$this->assertEquals(2000, $totalCost);
+	}
+	
+	/*
+	 * Тест: тестирование метода getProductInfo, получение информации о конкретном товаре
+	 
+	public function testCartGetProductInfoMethod()
+	{
+		// создаем экземпляр корзины
+		$cart = new Cart();
+		
+		// создаем продукты и массивы с данными
+		$product = factory(Product::class)->create();
+		$product_data = ['id' => $product->id, 'count' => 2, 'price' => 1000];
+		$cart->add($product_data);
+		
+		// проверяем что товары есть в корзине
+		$this->assertEquals(['products' => [$product_data]], $cart->content);
+		
+		// получаем общую стоимость товаров
+		$productInCart = $cart->getProductInfo($product->id);
+		
+		// проверяем что получили товары которые добавляли
+		$this->assertEquals($product, $productInCart);
+	}
+	*/
+	
+	
+	
+	/*
+	 * Тест: тестирование метода getCount, получение общего кол-ва товаров в корзине
+	 */
+	public function testCartGetCountMethod()
+	{
+		// создаем экземпляр корзины
+		$cart = new Cart();
+		
+		// создаем продукты и массивы с данными
+		$product = factory(Product::class)->create();
+		$product_data = ['id' => $product->id, 'count' => 2, 'price' => 1000];
+		$cart->add($product_data);
+		
+		$product2 = factory(Product::class)->create();
+		$product_data2 = ['id' => $product2->id, 'count' => 3, 'price' => 1000];
+		$cart->add($product_data2);
+		
+		// проверяем что товары есть в корзине
+		$this->assertEquals(['products' => [$product_data, $product_data2]], $cart->content);
+		
+		// получаем общую стоимость товаров
+		$totalCount = $cart->getTotalCount();
+		
+		// проверяем что получили товары которые добавляли
+		$this->assertEquals(5, $totalCount);
+	}
+	
 	
 }

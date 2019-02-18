@@ -11,7 +11,7 @@
             <div class="col-sm-4">
                 {{Form::open([
                     'route' => 'cart.add',
-                    'files' => true
+                    'class' => 'tovar_form'
                 ])}}
                 <div class="hidden">
                     <input type="text" name="product[id]" value="{{$product->id}}">

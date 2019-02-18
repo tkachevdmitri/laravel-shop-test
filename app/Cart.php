@@ -5,12 +5,12 @@ namespace App;
 
 class Cart
 {
-	private static $instance = null;
+	//private static $instance = null;
 	public $content;
 	
 	/*
 	 * @return Cart
-	*/
+	
 	public static function getInstance()
 	{
 		if (null === self::$instance)
@@ -19,9 +19,11 @@ class Cart
 		}
 		return self::$instance;
 	}
+	*/
 	
 	//private function __clone() {}
-	private function __construct()
+	
+	public function __construct()
 	{
 		session()->has('cart') ? $this->content = session()->get('cart') : $this->content = ['products' => []];
 	}
@@ -38,20 +40,6 @@ class Cart
 	public function add($data)
 	{
 		if(count($this->content['products'])){
-			/*
-			foreach ($this->content['products'] as $key => $product){
-				if($product['id'] == $data['id']){
-					echo 'увеличили кол-во существующего товара';
-					$this->content['products'][$key]['count'] += $data['count'];
-					break;
-				} else {
-					echo 'добавили новый товар в корзину с товарами';
-					$this->content['products'][] = $data;
-					break;
-				}
-			}
-			*/
-			
 			$inCart = false;
 			foreach ($this->content['products'] as $key => $product){
 				if($product['id'] == $data['id']){
@@ -104,5 +92,62 @@ class Cart
 	{
 		return $this->content['products'];
 	}
+	
+	/*
+	 * метод для получения информации о конкретном товаре
+	 */
+	public function getProductInfo($id)
+	{
+		return Product::where('id', $id)->firstOrfail();
+	}
+	
+	/*
+	 * метод для получения общей суммы
+	 */
+	public function getTotalCost()
+	{
+		if(count($this->content['products'])){
+			$summ = 0;
+			foreach($this->content['products'] as $key => $product ){
+				$summ += $product['price'] * $product['count'];
+			}
+			return $summ;
+		}
+	}
+	
+	
+	// не совмем понял по этим двум методам, как мне правильно выводить кол-во товаров в шапке сайта
+	public function getTotalCount()
+	{
+		if(count($this->content['products'])){
+			$count = 0;
+			
+			foreach($this->content['products'] as $key => $product ){
+				$count += $product['count'];
+			}
+			return $count;
+		} else {
+			return 0;
+		}
+	}
+	
+	/*
+	 * метод для получения количества товаров в корзине (вызывается в layout)
+	 */
+	public static function getCount()
+	{
+		$cart = new static;
+		if(count($cart->content['products'])){
+			$count = 0;
+			
+			foreach($cart->content['products'] as $key => $product ){
+				$count += $product['count'];
+			}
+			return $count;
+		} else {
+			return 0;
+		}
+	}
+	
 	
 }

@@ -16,11 +16,15 @@ use Faker\Generator as Faker;
 $factory->define(App\Product::class, function (Faker $faker) {
     return [
         'title' => $faker->name,
-        'price' => $faker->randomDigit,
+        'price' => $faker->numberBetween(500, 15000),
+		'category_id' => $faker->numberBetween(1, 5),  // так как создаю 5 категорий
 		'article' => $faker->unique()->randomDigit,
-		'brand' => 'Adidas',
-		'description' => 'Описание товара',
-		'category_id' => 1
+		'brand' => $faker->word,
+		'description' => $faker->sentence,
+		'is_new' => $faker->numberBetween(0, 1),
+		'is_recommended' => $faker->numberBetween(0, 1),
+		'status' => 1,
+		'image' => 'tovar.jpg',
     ];
 });
 
