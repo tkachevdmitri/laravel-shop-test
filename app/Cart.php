@@ -3,35 +3,27 @@
 namespace App;
 
 
+use Illuminate\Support\Facades\Session;
+
 class Cart
 {
-	//private static $instance = null;
+
 	public $content;
 	
-	/*
-	 * @return Cart
-	
-	public static function getInstance()
-	{
-		if (null === self::$instance)
-		{
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
-	*/
-	
-	//private function __clone() {}
 	
 	public function __construct()
 	{
 		session()->has('cart') ? $this->content = session()->get('cart') : $this->content = ['products' => []];
+		
 	}
 	
 	
 	public function __destruct()
 	{
+		//dd(app());
 		session(['cart' => $this->content]);
+		//dd(session()->all());
+		//Session::put('cart', $this->content);
 	}
 	
 	/*
@@ -39,6 +31,7 @@ class Cart
 	 */
 	public function add($data)
 	{
+		//dd($data);
 		if(count($this->content['products'])){
 			$inCart = false;
 			foreach ($this->content['products'] as $key => $product){

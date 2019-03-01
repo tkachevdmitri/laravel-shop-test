@@ -18,8 +18,9 @@ class ExampleTest extends TestCase
 	public function testCartAddMethod()
 	{
 		// создаем экземпляр корзины
-		//$cart = Cart::getInstance();
-		$cart = new Cart();
+		//$cart = new Cart();
+		//dd(app()->make('Cart'));
+		$cart = app()->make('Cart');
 		
 		// создаем продукт
 		$product = factory(Product::class)->create();
@@ -39,7 +40,6 @@ class ExampleTest extends TestCase
 	public function testCartAddTwoProductMethod()
 	{
 		// создаем экземпляр корзины
-		//$cart = Cart::getInstance();
 		$cart = new Cart();
 		
 		// создаем 1й продукт и массив с данными
@@ -67,7 +67,6 @@ class ExampleTest extends TestCase
 	public function testCartAddTwoSameProductMethod()
 	{
 		// создаем экземпляр корзины
-		//$cart = Cart::getInstance();
 		$cart = new Cart();
 		
 		// создаем продукт и массив с данными
@@ -89,7 +88,6 @@ class ExampleTest extends TestCase
 	public function testCartAddTwoSameProductsMethod()
 	{
 		// создаем экземпляр корзины
-		//$cart = Cart::getInstance();
 		$cart = new Cart();
 		
 		// создаем 1 продукт и массив с данными
@@ -117,7 +115,6 @@ class ExampleTest extends TestCase
 	public function testCartRemoveOneProductMethod()
 	{
 		// создаем экземпляр корзины
-		//$cart = Cart::getInstance();
 		$cart = new Cart();
 		
 		// создаем продукт и массив с данными
@@ -141,7 +138,6 @@ class ExampleTest extends TestCase
 	public function testCartRemoveSomeProductMethod()
 	{
 		// создаем экземпляр корзины
-		//$cart = Cart::getInstance();
 		$cart = new Cart();
 		
 		// создаем продукт и массив с данными
@@ -164,7 +160,6 @@ class ExampleTest extends TestCase
 	public function testCartRemoveMoreProductMethod()
 	{
 		// создаем экземпляр корзины
-		//$cart = Cart::getInstance();
 		$cart = new Cart();
 		
 		// создаем продукты и массивы с данными
@@ -194,7 +189,6 @@ class ExampleTest extends TestCase
 	public function testCartClearMethod()
 	{
 		// создаем экземпляр корзины
-		//$cart = Cart::getInstance();
 		$cart = new Cart();
 		
 		// создаем продукты и массивы с данными
@@ -223,7 +217,6 @@ class ExampleTest extends TestCase
 	public function testCartGetMethod()
 	{
 		// создаем экземпляр корзины
-		//$cart = Cart::getInstance();
 		$cart = new Cart();
 		
 		// создаем продукты и массивы с данными
